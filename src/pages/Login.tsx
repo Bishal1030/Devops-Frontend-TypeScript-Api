@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { login } from "../api/auth"; // Your login API function
 import Cookies from "js-cookie"; // To store token in cookie
+import { Link } from "react-router-dom"; // ✅ import Link
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -83,9 +84,12 @@ const Login = () => {
 
         <p className="text-sm text-center text-gray-500 mt-8">
           Don't have an account?{" "}
-          <span className="text-blue-600 hover:underline cursor-pointer">
+          <Link
+            to="/signup" // ✅ navigates to signup page
+            className="text-blue-600 hover:underline"
+          >
             Sign Up
-          </span>
+          </Link>
         </p>
       </div>
     </div>
